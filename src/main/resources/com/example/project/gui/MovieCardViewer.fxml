@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+
+<fx:root prefHeight="455.0" prefWidth="610.0" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+          <ListView fx:id="movieListView" prefHeight="441.0" prefWidth="342.0" style="-fx-background-color: #0d0505;" />
+          <HBox fx:id="movieCardContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="455.0" prefWidth="271.0" style="-fx-background-color: #362b2b;" />
+    </children>
+</fx:root>

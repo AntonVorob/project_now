@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root style="-fx-background-color: #0d0505;" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <!--<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="355.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"> -->
+    <children>
+        <ImageView fx:id="avatarThumbnail" fitHeight="96.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+         <HBox.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </HBox.margin></ImageView>
+        <VBox prefHeight="95.0" prefWidth="246.0" style="-fx-background-color: #0d0505;">
+            <children>
+                <Label fx:id="nameTitle" prefHeight="30.0" prefWidth="210.0" style="-fx-background-color: #595151;" text="Movie Name:" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="15.0" top="10.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="Description" prefHeight="39.0" prefWidth="210.0" style="-fx-background-color: #595151;" text="Description:" textFill="WHITE">
+                    <VBox.margin>
+                        <Insets left="15.0" top="10.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+    </children>
+    <!--</HBox>-->
+
+</fx:root>

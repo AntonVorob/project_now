@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0d0505;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.HelloController">
+   <center>
+      <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="429.0" prefWidth="600.0" side="BOTTOM" style="-fx-background-color: #450e0e;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab style="-fx-background-color: #8a8383;" text="Главная">
+            <content>
+              <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #0d0505;">
+                     <children>
+                        <Button fx:id="Search" layoutX="469.0" layoutY="5.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #595151;" text="Поиск" textFill="WHITE" AnchorPane.bottomAnchor="340.0" AnchorPane.leftAnchor="480.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="5.0" />
+                        <Label fx:id="SearchBar" layoutX="9.0" layoutY="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="23.0" prefWidth="528.0" style="-fx-background-color: #595151;" text="Поиск фильма или сериала:" textFill="WHITE" AnchorPane.bottomAnchor="340.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="5.0">
+                           <opaqueInsets>
+                              <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets bottom="3.0" top="3.0" />
+                           </padding></Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </padding>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab style="-fx-background-color: #8a8383;" text="Закладки">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="568.0">
+                     <children>
+                        <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="371.0" prefWidth="600.0" style="-fx-background-color: #0d0505;" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab style="-fx-background-color: #8a8383;" text="В планах">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="270.0" prefWidth="490.0" />
+                              </content>
+                            </Tab>
+                            <Tab style="-fx-background-color: #8a8383;" text="Просмотрено">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                              <Tab style="-fx-background-color: #8a8383;" text="Избранное">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                              <Tab style="-fx-background-color: #8a8383;" text="Отложено">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                              <Tab style="-fx-background-color: #8a8383;" text="Брошено">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                          </tabs>
+                           <padding>
+                              <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                           </padding>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+         <BorderPane.margin>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </BorderPane.margin>
+      </TabPane>
+   </center>
+</BorderPane>
