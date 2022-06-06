@@ -1,6 +1,6 @@
 package com.example.project.movies;
 
-import com.example.project.HelloApplication;
+import com.example.project.MovieApplication;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,39 +11,93 @@ import javax.persistence.Id;
 public class Movie {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    boolean Planned;
-    boolean Watched;
-    boolean Favourites;//Избранное
-    boolean Postponed;//отложено
-    boolean Abandoned;//Брошено
+    boolean planned = false;
+    boolean watched = false;
+    boolean favourites = false;//Избранное
+    boolean postponed = false;//отложено
+    boolean abandoned = false;//Брошено
 
     String nameRU;
     String nameEN;
-    String PosterURL = String.valueOf(HelloApplication.class.getResource("puppy.jpg"));
+    String PosterURL = String.valueOf(MovieApplication.class.getResource("puppy.jpg"));
     String Genres;
     int years;
     double ratingKinopoisk;
     String shortDescription;
+
+    public void setPlanned(boolean planned) {
+        this.planned = planned;
+    }
+
+    public void setWatched(boolean watched) {
+        this.watched = watched;
+    }
+
+    public void setFavourites(boolean favourites) {
+        this.favourites = favourites;
+    }
+
+    public void setPostponed(boolean postponed) {
+        this.postponed = postponed;
+    }
+
+    public void setAbandoned(boolean abandoned) {
+        this.abandoned = abandoned;
+    }
+
     String country;
     String webUrl;
     int filmId;
 
-//
 
-    public Movie(String nameRU, String nameEN, String posterURL, String genres, int years, double ratingKinopoisk, String shortDescription, String country, String webUrl, int FilmId) {
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
+
+    public void setNameRU(String nameRU) {
         this.nameRU = nameRU;
+    }
+
+    public void setNameEN(String nameEN) {
         this.nameEN = nameEN;
+    }
+
+    public void setPosterURL(String posterURL) {
         PosterURL = posterURL;
+    }
+
+    public void setGenres(String genres) {
         Genres = genres;
+    }
+
+    public void setYears(int years) {
         this.years = years;
+    }
+
+    public void setRatingKinopoisk(double ratingKinopoisk) {
         this.ratingKinopoisk = ratingKinopoisk;
+    }
+
+    public void setShortDescription(String shortDescription) {
         this.shortDescription = shortDescription;
+    }
+
+    public void setCountry(String country) {
         this.country = country;
+    }
+
+    public void setWebUrl(String webUrl) {
         this.webUrl = webUrl;
-        this.filmId= filmId;
+    }
+
+    public void setFilmId(int filmId) {
+        this.filmId = filmId;
     }
 
     public Movie(String nameRu) {
@@ -57,6 +111,7 @@ public class Movie {
     public String getNameRU() {
         return nameRU;
     }
+
     public int getfilmId() {
         return filmId;
     }

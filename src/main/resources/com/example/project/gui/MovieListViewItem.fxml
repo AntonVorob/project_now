@@ -7,10 +7,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root style="-fx-background-color: #0d0505;" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root style="-fx-background-color: #0d0505;" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" cache="true">
     <!--<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="355.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"> -->
     <children>
-        <ImageView fx:id="avatarThumbnail" fitHeight="96.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="avatarThumbnail" fitHeight="96.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" cache="true">
          <HBox.margin>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </HBox.margin></ImageView>

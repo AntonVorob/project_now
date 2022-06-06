@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.CacheHint;
 import javafx.scene.Scene;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -31,6 +32,7 @@ public class MovieCardViewer extends HBox implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("MovieCardViewer.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
+
         try {
             fxmlLoader.load();
         } catch (Exception e) {
@@ -44,6 +46,9 @@ public class MovieCardViewer extends HBox implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        movieListView.setCache(true);
+        movieListView.setCacheHint(CacheHint.SPEED);
 
         this.movieListView.setItems(movies);
 

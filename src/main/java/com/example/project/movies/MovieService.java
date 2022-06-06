@@ -2,59 +2,73 @@ package com.example.project.movies;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Scanner;
 
 @Component
 public class MovieService {
 
-    public ArrayList<Movie> getMoviesPlanned() {
-        // TODO:
-        return new ArrayList<>();
-    }
+    @Autowired
+    private MovieRepository movieRepository;
 
-    public ArrayList<Movie> getMoviesWatched() {
-
-        return new ArrayList<>();
-    }
-
-    public ArrayList<Movie> getMoviesFavourites() {
-
-        return new ArrayList<>();
-    }
-
-    public ArrayList<Movie> getMoviesPostponed() {
-
-        return new ArrayList<>();
-    }
-
-    public ArrayList<Movie> getMoviesAbandoned() {
-
-        return new ArrayList<>();
+    public static <E> List<E> toList(Iterable<E> iter) {
+        List<E> list = new ArrayList<E>();
+        for (E item : iter) {
+            list.add(item);
+        }
+        return list;
     }
 
 
+    public List<Movie> getMoviesPlanned() {
+        return toList(this.movieRepository.findByPlannedIsTrue());
+    }
+
+    public List<Movie> getMoviesWatched() {
+        return this.movieRepository.findByWatchedIsTrue();
+    }
+
+    public List<Movie> getMoviesFavourites() {
+        return this.movieRepository.findByFavouritesIsTrue();
+    }
+
+    public List<Movie> getMoviesPostponed() {
+        return this.movieRepository.findByPostponedIsTrue();
+    }
+
+    public List<Movie> getMoviesAbandoned() {
+        return this.movieRepository.findByAbandonedIsTrue();
+    }
 
 
-    public ArrayList<Movie> findMovies(String s) {
-    ArrayList<Movie> Movies = new ArrayList<Movie>();
+    public List<Movie> findMovies(String s) {
+        return findMovies(s, 1);
+    }
+
+    public List<Movie> findMovies(String s, int page) {
+        ArrayList<Movie> Movies = new ArrayList<Movie>();
         try {
 
-            URL url = new URL("https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?" +
-                    "keyword=" + URLEncoder.encode(s, StandardCharsets.UTF_8) +
-                    "&page=1");
+            URL url = new URL("https://kinopoiskapiunofficial.tech/api/v2.2/films?type=ALL&" +
+                    "keyword=" + URLEncoder.encode(s, StandardCharsets.UTF_8)
+                    + "&page=" + page
+            );
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestProperty("Accept", "application/json");
-            conn.setRequestProperty("X-API-KEY", "");
+            conn.setRequestProperty("X-API-KEY", "79309bde-6cab-48d6-a717-e633cf5fbc89");
 
             int responsecode = conn.getResponseCode();
+
+            JSONObject response;
 
             if (responsecode != 200) {
                 throw new RuntimeException("HttpResponseCode: " + responsecode);
@@ -66,28 +80,33 @@ public class MovieService {
                     inline += scanner.nextLine();
                 }
                 scanner.close();
-                JSONObject response = new JSONObject(inline);
+                response = new JSONObject(inline);
 
                 // Здесь в бой вступаем МЫ!
-                JSONArray movies = (JSONArray) response.get("films");
+                JSONArray movies = (JSONArray) response.get("items");
                 for (int i = 0; i < movies.length(); i++) {
                     Movie movie = new Movie();
-                    movie.nameRU=movies.getJSONObject(i).getString("nameRu");
-                    movie.filmId=movies.getJSONObject(i).getInt( "filmId");
-                    movie.years=movies.getJSONObject(i).getInt("year");
-                    movie.shortDescription=movies.getJSONObject(i).getString("description");
-                    movie.Genres=movies.getJSONObject(i).getString("genre");
-                    movie.nameEN=movies.getJSONObject(i).getString("nameEn");
-                    movie.PosterURL=movies.getJSONObject(i).getString("posterUrl");
+                    movie.nameRU = movies.getJSONObject(i).optString("nameRu");
+                    movie.filmId = movies.getJSONObject(i).getInt("kinopoiskId");
+                    movie.years = movies.getJSONObject(i).optInt("year");
+                    movie.shortDescription = movies.getJSONObject(i).optString("description");
+                    //movie.Genres = movies.getJSONObject(i).optString("genre", null);
+                    movie.nameEN = movies.getJSONObject(i).optString("nameEn");
+                    movie.PosterURL = movies.getJSONObject(i).optString("posterUrl");
 
                     Movies.add(movie);
 
-                   // System.out.println(movies.getJSONObject(i).getString("nameRu"));
+                    System.out.println(movies.getJSONObject(i).optString("nameRu"));
                 }
 
             }
 
             conn.disconnect();
+
+//            int pagesTotal = response.getInt("pagesCount");
+//            if ((page < pagesTotal) && (page < 5)) {
+//                Movies.addAll(findMovies(s, page + 1));
+//            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -95,6 +114,10 @@ public class MovieService {
 
         return Movies;
 
+    }
+
+    public Movie saveMovie(Movie m) {
+        return this.movieRepository.save(m);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.project.gui;
 
+import com.example.project.MovieApplication;
 import com.example.project.movies.Movie;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,6 +30,9 @@ public class MovieCard extends HBox {
 
 
     public void setMovie(Movie m) {
+
+        // TODO: доделать отображение информации о фильме в карточке
+
         this.nameTitle.setText(m.getNameRU()+"\n"+m.getNameEN()+"\n");
         this.Genres.setText (m.getGenres());
         this.years.setText(m.getYears()+"\n"+m.getRatingKinopoisk()+"\n"+m.getCountry()+"\n");
@@ -40,8 +44,13 @@ public class MovieCard extends HBox {
         }
 
     }
-    public void setMovieName(String s) {
-        this.nameTitle.setText(s);
+
+    // TODO: должны быть кнопки, которые добавляют или удаляют категорию
+
+    void buttonClicked() {
+        Movie m = new Movie(); // откуда то у нас есть кино
+        m.setAbandoned(true);
+        MovieApplication.movieService.saveMovie(m);
     }
 
 

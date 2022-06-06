@@ -1,6 +1,5 @@
 package com.example.project.movies;
 
-import com.example.project.HelloApplication;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,7 +15,7 @@ public class MovieApplication extends Application {
     public void start(Stage stage) throws IOException {
         stage.setTitle("Hello!");
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("project.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.project.MovieApplication.class.getResource("project.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setScene(scene);

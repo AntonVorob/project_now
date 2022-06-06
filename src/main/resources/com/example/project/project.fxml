@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0d0505;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0d0505;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.gui.MainController">
    <center>
       <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="429.0" prefWidth="600.0" side="BOTTOM" style="-fx-background-color: #450e0e;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
@@ -16,14 +12,9 @@
             <content>
               <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #0d0505;">
                      <children>
-                        <Button fx:id="Search" layoutX="469.0" layoutY="5.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #595151;" text="Поиск" textFill="WHITE" AnchorPane.bottomAnchor="340.0" AnchorPane.leftAnchor="480.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="5.0" />
-                        <Label fx:id="SearchBar" layoutX="9.0" layoutY="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="23.0" prefWidth="528.0" style="-fx-background-color: #595151;" text="Поиск фильма или сериала:" textFill="WHITE" AnchorPane.bottomAnchor="340.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="5.0">
-                           <opaqueInsets>
-                              <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
-                           </opaqueInsets>
-                           <padding>
-                              <Insets bottom="3.0" top="3.0" />
-                           </padding></Label>
+                        <Button fx:id="searchBtn" layoutX="452.0" layoutY="6.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #595151;" text="Искать" textFill="WHITE" />
+                        <TextField fx:id="searchTextField" layoutX="14.0" layoutY="7.0" prefHeight="24.0" prefWidth="418.0" promptText="Поиск фильма или сериала" style="-fx-background-color: #595151;" />
+                        <VBox fx:id="movieContainer" layoutX="14.0" layoutY="40.0" prefHeight="313.0" prefWidth="571.0" style="-fx-background-color: #222222;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="39.0" />
                      </children>
                      <padding>
                         <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
@@ -35,7 +26,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="568.0">
                      <children>
-                        <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="371.0" prefWidth="600.0" style="-fx-background-color: #0d0505;" tabClosingPolicy="UNAVAILABLE">
+                        <TabPane fx:id="foldersTabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="371.0" prefWidth="600.0" style="-fx-background-color: #0d0505;" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
                             <Tab style="-fx-background-color: #8a8383;" text="В планах">
                               <content>
