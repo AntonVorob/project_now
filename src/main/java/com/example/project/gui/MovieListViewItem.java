@@ -1,6 +1,9 @@
 package com.example.project.gui;
 
+import com.example.project.MovieApplication;
 import com.example.project.movies.Movie;
+import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -36,7 +39,16 @@ public class MovieListViewItem extends HBox implements Initializable {
         this.nameTitle.setText(m.getNameRU());
         this.Description.setText (m.getShortDescription());
         try{
-            this.avatarThumbnail.setImage(new Image(m.getPosterURL()));
+            this.avatarThumbnail.setImage(new Image(getClass().getResource("loading.gif").toString()));
+            if (!MovieApplication.imageCache.containsKey(m.getPosterURL())) {
+                Platform.runLater(() -> {
+                    MovieApplication.imageCache.put(m.getPosterURL(), new Image(m.getPosterURL()));
+                    this.avatarThumbnail.setImage(MovieApplication.imageCache.get(m.getPosterURL()));
+                });
+            } else {
+                this.avatarThumbnail.setImage(MovieApplication.imageCache.get(m.getPosterURL()));
+            }
+
         }catch (Exception e){
             e.printStackTrace();
         }

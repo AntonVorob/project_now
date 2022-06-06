@@ -4,17 +4,21 @@ import com.example.project.movies.MovieService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 @SpringBootApplication
 public class MovieApplication extends Application {
 
     public static MovieService movieService;
+    public static Map<String, Image> imageCache = new HashMap<>();
 
     private static ConfigurableApplicationContext context;
 

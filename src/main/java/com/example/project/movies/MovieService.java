@@ -92,7 +92,7 @@ public class MovieService {
                     movie.shortDescription = movies.getJSONObject(i).optString("description");
                     //movie.Genres = movies.getJSONObject(i).optString("genre", null);
                     movie.nameEN = movies.getJSONObject(i).optString("nameEn");
-                    movie.PosterURL = movies.getJSONObject(i).optString("posterUrl");
+                    movie.PosterURL = movies.getJSONObject(i).optString("posterUrlPreview");
 
                     Movies.add(movie);
 
