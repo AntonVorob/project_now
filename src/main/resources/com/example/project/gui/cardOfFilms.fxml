@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.TilePane?>
 
-<fx:root type="javafx.scene.layout.HBox" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+<fx:root type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="347.0" style="-fx-background-color: #0d0505;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <ImageView fx:id="Poster" fitHeight="174.0" fitWidth="229.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
@@ -28,35 +28,35 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #540808;" text="Просмотренно" textFill="WHITE" GridPane.columnIndex="1">
+            <Button fx:id="btnWatched" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #540808;" text="Просмотренно" textFill="WHITE" GridPane.columnIndex="1">
                   <GridPane.margin>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </GridPane.margin>
                   <padding>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </padding></Button>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #540808;" text="Избранное" textFill="WHITE">
+            <Button fx:id="btnFavourites" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #540808;" text="Избранное" textFill="WHITE">
                   <GridPane.margin>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </GridPane.margin>
                   <padding>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </padding></Button>
-            <Button alignment="CENTER" contentDisplay="BOTTOM" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #540808;" text="В планах" textFill="WHITE" GridPane.rowIndex="1">
+            <Button fx:id="btnPlanned" alignment="CENTER" contentDisplay="BOTTOM" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #540808;" text="В планах" textFill="WHITE" GridPane.rowIndex="1">
                   <GridPane.margin>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </GridPane.margin>
                   <padding>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </padding></Button>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" style="-fx-background-color: #540808;" text="Отложено" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="btnPostponed" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" style="-fx-background-color: #540808;" text="Отложено" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                   <GridPane.margin>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </GridPane.margin>
                   <padding>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </padding></Button>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" style="-fx-background-color: #540808;" text="Брошено" textFill="#fffafa" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="btnAbandoned" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" style="-fx-background-color: #540808;" text="Брошено" textFill="#fffafa" GridPane.columnIndex="1" GridPane.rowIndex="1">
                   <GridPane.margin>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </GridPane.margin>

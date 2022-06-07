@@ -21,7 +21,11 @@ public class MainController implements Initializable {
     public TextField searchTextField;
     public VBox movieContainer;
     public TabPane foldersTabPane;
-
+    public VBox movieContainerPlanned;
+    public VBox movieContainerWatched;
+    public VBox movieContainerFavourites;
+    public VBox movieContainerPostponed;
+    public VBox movieContainerAbandoned;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -44,12 +48,30 @@ public class MainController implements Initializable {
             public void changed(ObservableValue<? extends Number> ov, Number oldValue, Number newValue) {
                 // TODO: добавить во вкладку отображатель кина по категориям (см. выше)
                 if (newValue.equals(0)) {
-
+                    MovieCardViewer viewer = new MovieCardViewer();
+                    movieContainerPlanned.getChildren().clear();
+                    movieContainerPlanned.getChildren().add(viewer);
                 }
                 if (newValue.equals(1)) {
-
+                    MovieCardViewer viewer = new MovieCardViewer();
+                    movieContainerWatched.getChildren().clear();
+                    movieContainerWatched.getChildren().add(viewer);
                 }
-                // ...
+                if (newValue.equals(2)) {
+                    MovieCardViewer viewer = new MovieCardViewer();
+                    movieContainerFavourites.getChildren().clear();
+                    movieContainerFavourites.getChildren().add(viewer);
+                }
+                if (newValue.equals(3)) {
+                    MovieCardViewer viewer = new MovieCardViewer();
+                    movieContainerPostponed.getChildren().clear();
+                    movieContainerPostponed.getChildren().add(viewer);
+                }
+                if (newValue.equals(4)) {
+                    MovieCardViewer viewer = new MovieCardViewer();
+                    movieContainerAbandoned.getChildren().clear();
+                    movieContainerAbandoned.getChildren().add(viewer);
+                }
             }
         });
 
