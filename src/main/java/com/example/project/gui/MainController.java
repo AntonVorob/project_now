@@ -49,6 +49,7 @@ public class MainController implements Initializable {
                 // TODO: добавить во вкладку отображатель кина по категориям (см. выше)
                 if (newValue.equals(0)) {
                     MovieCardViewer viewer = new MovieCardViewer();
+                    viewer.setMovies(MovieApplication.movieService.getMoviesPlanned());
                     movieContainerPlanned.getChildren().clear();
                     movieContainerPlanned.getChildren().add(viewer);
                 }
