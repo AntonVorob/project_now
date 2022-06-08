@@ -26,6 +26,27 @@ public class Movie {
     String Genres="" ;
     int years=0;
     double ratingKinopoisk=0;
+
+    public boolean isPlanned() {
+        return planned;
+    }
+
+    public boolean isWatched() {
+        return watched;
+    }
+
+    public boolean isFavourites() {
+        return favourites;
+    }
+
+    public boolean isPostponed() {
+        return postponed;
+    }
+
+    public boolean isAbandoned() {
+        return abandoned;
+    }
+
     String shortDescription="";
 
     public void setPlanned(boolean planned) {

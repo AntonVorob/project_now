@@ -4,12 +4,18 @@ import com.example.project.MovieApplication;
 import com.example.project.movies.Movie;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 
-public class MovieCard extends HBox {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MovieCard extends HBox implements Initializable {
 
     @FXML
    public Label nameTitle;
@@ -28,8 +34,11 @@ public class MovieCard extends HBox {
         }
     }
 
+    Movie selectedMovie;
 
     public void setMovie(Movie m) {
+
+        this.selectedMovie = m;
 
         this.nameTitle.setText(m.getNameRU());
         this.Genres.setText (m.getGenres());
@@ -46,12 +55,22 @@ public class MovieCard extends HBox {
 
     // TODO: должны быть кнопки, которые добавляют или удаляют категорию
 
-    void buttonClicked() {
-        Movie m = new Movie(); // откуда то у нас есть кино
-        m.setAbandoned(true);
+    @FXML
+    public Button btnWatched;
 
-        MovieApplication.movieService.saveMovie(m);
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.btnWatched.setOnAction(e -> {
+            if (selectedMovie.isWatched()) {
+                selectedMovie.setWatched(false);
+                this.btnWatched.setTextFill(Color.BLUE);
+            } else {
+                selectedMovie.setWatched(true);
+                this.btnWatched.setTextFill(Color.RED);
+            }
+            MovieApplication.movieService.saveMovie(selectedMovie);
+        });
+
+        // TODO: написать для других кнопок
     }
-
-
 }
