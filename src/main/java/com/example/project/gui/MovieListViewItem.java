@@ -38,6 +38,7 @@ public class MovieListViewItem extends HBox implements Initializable {
     void setMovie(Movie m) {
         this.nameTitle.setText(m.getNameRU());
         this.Description.setText (m.getShortDescription());
+        m.setNameEN(m.getNameEN());
         try{
             this.avatarThumbnail.setImage(new Image(getClass().getResource("loading.gif").toString()));
             if (!MovieApplication.imageCache.containsKey(m.getPosterURL())) {
@@ -52,6 +53,7 @@ public class MovieListViewItem extends HBox implements Initializable {
         }catch (Exception e){
             e.printStackTrace();
         }
+
     }
 
     @Override

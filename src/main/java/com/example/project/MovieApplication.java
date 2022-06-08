@@ -31,7 +31,7 @@ public class MovieApplication extends Application {
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("example.fxml"));
         FXMLLoader fxmlLoader = new FXMLLoader(MovieApplication.class.getResource("project.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 615);
-        stage.setTitle("Hello!");
+        stage.setTitle("Movielib V0.8!");
         stage.setScene(scene);
 //        MovieCardViewer x = new MovieCardViewer();
 //        x.setMovies(List.of(new Movie[]{new Movie("Здравствуйте, я ваша тетя!")}));

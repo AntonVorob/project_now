@@ -87,16 +87,20 @@ public class MovieService {
                 for (int i = 0; i < movies.length(); i++) {
                     Movie movie = new Movie();
                     movie.nameRU = movies.getJSONObject(i).optString("nameRu");
+                    movie.ratingKinopoisk = movies.getJSONObject(i).optDouble("ratingKinopoisk");
                     movie.filmId = movies.getJSONObject(i).getInt("kinopoiskId");
                     movie.years = movies.getJSONObject(i).optInt("year");
-                    movie.shortDescription = movies.getJSONObject(i).optString("description");
-                    //movie.Genres = movies.getJSONObject(i).optString("genre", null);
-                    movie.nameEN = movies.getJSONObject(i).optString("nameEn");
+                    movie.shortDescription = movies.getJSONObject(i).optString("type");
+                    movie.Genres = movies.getJSONObject(i).optString("genres");
+                    movie.nameEN = movies.getJSONObject(i).optString("nameOriginal");
                     movie.PosterURL = movies.getJSONObject(i).optString("posterUrlPreview");
+                    movie.country = movies.getJSONObject(i).optString("countries");
 
                     Movies.add(movie);
 
                     System.out.println(movies.getJSONObject(i).optString("nameRu"));
+
+
                 }
 
             }

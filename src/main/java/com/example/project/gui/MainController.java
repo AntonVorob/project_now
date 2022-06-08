@@ -18,6 +18,7 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
 
     public Button searchBtn;
+    public Button btnPlanned;
     public TextField searchTextField;
     public VBox movieContainer;
     public TabPane foldersTabPane;
@@ -46,7 +47,7 @@ public class MainController implements Initializable {
         this.foldersTabPane.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> ov, Number oldValue, Number newValue) {
-                // TODO: добавить во вкладку отображатель кина по категориям (см. выше)
+
                 if (newValue.equals(0)) {
                     MovieCardViewer viewer = new MovieCardViewer();
                     viewer.setMovies(MovieApplication.movieService.getMoviesPlanned());

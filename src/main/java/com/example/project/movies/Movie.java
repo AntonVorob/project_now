@@ -21,12 +21,12 @@ public class Movie {
     boolean abandoned = false;//Брошено
 
     String nameRU;
-    String nameEN;
+    String nameEN= "";
     String PosterURL = String.valueOf(MovieApplication.class.getResource("puppy.jpg"));
-    String Genres;
-    int years;
-    double ratingKinopoisk;
-    String shortDescription;
+    String Genres="" ;
+    int years=0;
+    double ratingKinopoisk=0;
+    String shortDescription="";
 
     public void setPlanned(boolean planned) {
         this.planned = planned;
@@ -69,11 +69,11 @@ public class Movie {
     }
 
     public void setPosterURL(String posterURL) {
-        PosterURL = posterURL;
+        this.PosterURL = posterURL;
     }
 
     public void setGenres(String genres) {
-        Genres = genres;
+        this.Genres = genres;
     }
 
     public void setYears(int years) {
@@ -100,7 +100,7 @@ public class Movie {
         this.filmId = filmId;
     }
 
-    public Movie(String nameRu) {
+    public Movie(String nameRu ) {
         this.nameRU = nameRu;
     }
 
