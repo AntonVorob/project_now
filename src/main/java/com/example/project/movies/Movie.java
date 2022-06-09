@@ -23,7 +23,7 @@ public class Movie {
     String nameRU;
     String nameEN= "";
     String PosterURL = String.valueOf(MovieApplication.class.getResource("puppy.jpg"));
-    String Genres="Жанры:" ;
+    String Genres="Жанры: " ;
     String country="";
     String webUrl;
     String shortDescription="";
