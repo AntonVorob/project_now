@@ -18,7 +18,6 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
 
     public Button searchBtn;
-    public Button btnPlanned;
     public TextField searchTextField;
     public VBox movieContainer;
     public TabPane foldersTabPane;

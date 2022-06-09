@@ -79,8 +79,6 @@ public class Movie {
         this.id = id;
     }
 
-
-
     public void setNameRU(String nameRU) {
         this.nameRU = nameRU;
     }

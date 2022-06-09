@@ -62,59 +62,69 @@ public class MovieCard extends HBox implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        this.btnWatched.setOnAction(e -> {//просмотренно
-            if (selectedMovie.isWatched()) {
-                selectedMovie.setWatched(false);
-                this.btnWatched.setTextFill(Color.GRAY);
-            } else {
-                selectedMovie.setWatched(true);
-                this.btnWatched.setTextFill(Color.RED);
-            }
-            MovieApplication.movieService.saveMovie(selectedMovie);
-        });
+            this.btnWatched.setOnAction(e -> {//просмотренно
+                if (this.selectedMovie != null) {
+                    if (selectedMovie.isWatched()) {
+                        selectedMovie.setWatched(false);
+                        this.btnWatched.setTextFill(Color.GRAY);
+                    } else {
+                        selectedMovie.setWatched(true);
+                        this.btnWatched.setTextFill(Color.RED);
+                    }
+                    MovieApplication.movieService.saveMovie(selectedMovie);
+                }
+            });
 
             this.btnPlanned.setOnAction(e1 -> {//В планах
-                if (selectedMovie.isPlanned()) {
-                    selectedMovie.setPlanned(false);
-                    this.btnPlanned.setTextFill(Color.GRAY);
-                } else {
-                    selectedMovie.setPlanned(true);
-                    this.btnPlanned.setTextFill(Color.RED);
+                if (this.selectedMovie != null) {
+                    if (selectedMovie.isPlanned()) {
+                        selectedMovie.setPlanned(false);
+                        this.btnPlanned.setTextFill(Color.GRAY);
+                    } else {
+                        selectedMovie.setPlanned(true);
+                        this.btnPlanned.setTextFill(Color.RED);
+                    }
+                    MovieApplication.movieService.saveMovie(selectedMovie);
                 }
-                MovieApplication.movieService.saveMovie(selectedMovie);
             });
 
             this.btnFavourites.setOnAction(e1 -> {//Избранное
-                if (selectedMovie.isFavourites()) {
-                    selectedMovie.setFavourites(false);
-                    this.btnFavourites.setTextFill(Color.GRAY);
-                } else {
-                    selectedMovie.setFavourites(true);
-                    this.btnFavourites.setTextFill(Color.RED);
+                if (this.selectedMovie != null) {
+                    if (selectedMovie.isFavourites()) {
+                        selectedMovie.setFavourites(false);
+                        this.btnFavourites.setTextFill(Color.GRAY);
+                    } else {
+                        selectedMovie.setFavourites(true);
+                        this.btnFavourites.setTextFill(Color.RED);
+                    }
+                    MovieApplication.movieService.saveMovie(selectedMovie);
                 }
-                MovieApplication.movieService.saveMovie(selectedMovie);
             });
 
             this.btnPostponed.setOnAction(e1 -> {//Отложено
-                if (selectedMovie.isPostponed()) {
-                    selectedMovie.setPostponed(false);
-                    this.btnPostponed.setTextFill(Color.GRAY);
-                } else {
-                    selectedMovie.setPostponed(true);
-                    this.btnPostponed.setTextFill(Color.RED);
+                if (this.selectedMovie != null) {
+                    if (selectedMovie.isPostponed()) {
+                        selectedMovie.setPostponed(false);
+                        this.btnPostponed.setTextFill(Color.GRAY);
+                    } else {
+                        selectedMovie.setPostponed(true);
+                        this.btnPostponed.setTextFill(Color.RED);
+                    }
+                    MovieApplication.movieService.saveMovie(selectedMovie);
                 }
-                MovieApplication.movieService.saveMovie(selectedMovie);
             });
 
             this.btnAbandoned.setOnAction(e1 -> {//Юрошено
-                if (selectedMovie.isAbandoned()) {
-                    selectedMovie.setAbandoned(false);
-                    this.btnAbandoned.setTextFill(Color.GRAY);
-                } else {
-                    selectedMovie.setAbandoned(true);
-                    this.btnAbandoned.setTextFill(Color.RED);
+                if (this.selectedMovie != null) {
+                    if (selectedMovie.isAbandoned()) {
+                        selectedMovie.setAbandoned(false);
+                        this.btnAbandoned.setTextFill(Color.GRAY);
+                    } else {
+                        selectedMovie.setAbandoned(true);
+                        this.btnAbandoned.setTextFill(Color.RED);
+                    }
+                    MovieApplication.movieService.saveMovie(selectedMovie);
                 }
-                MovieApplication.movieService.saveMovie(selectedMovie);
             });
 
     }
