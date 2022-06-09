@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
     <children>
           <ListView fx:id="movieListView" prefHeight="441.0" prefWidth="342.0" style="-fx-background-color: #3b0d0d;" />
           <HBox fx:id="movieCardContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="455.0" prefWidth="271.0" style="-fx-background-color: #362b2b;" />

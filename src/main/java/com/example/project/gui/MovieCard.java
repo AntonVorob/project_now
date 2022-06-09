@@ -28,6 +28,7 @@ public class MovieCard extends HBox implements Initializable {
     public Button btnFavourites;
     public Button btnAbandoned;
     public Button btnPostponed;
+
     Movie selectedMovie;
 
     public MovieCard() {
@@ -68,7 +69,7 @@ public class MovieCard extends HBox implements Initializable {
                 if ((this.selectedMovie != null) &(selectedMovie.isPlanned()!=true) &(selectedMovie.isPostponed()!=true)&(selectedMovie.isAbandoned()!=true)&(selectedMovie.isFavourites()!=true)) {
                     if (selectedMovie.isWatched()) {
                         selectedMovie.setWatched(false);
-                        this.btnWatched.setTextFill(Color.GRAY);
+                        this.btnWatched.setTextFill(Color.BLUE);
                     } else {
                         selectedMovie.setWatched(true);
                         this.btnWatched.setTextFill(Color.RED);
@@ -81,7 +82,7 @@ public class MovieCard extends HBox implements Initializable {
                 if ((this.selectedMovie != null)&(selectedMovie.isWatched()!=true) &(selectedMovie.isPostponed()!=true)&(selectedMovie.isAbandoned()!=true)&(selectedMovie.isFavourites()!=true)) {
                     if (selectedMovie.isPlanned()) {
                         selectedMovie.setPlanned(false);
-                        this.btnPlanned.setTextFill(Color.GRAY);
+                        this.btnPlanned.setTextFill(Color.BLUE);
                     } else {
                         selectedMovie.setPlanned(true);
                         this.btnPlanned.setTextFill(Color.RED);
@@ -94,7 +95,7 @@ public class MovieCard extends HBox implements Initializable {
                 if ((this.selectedMovie != null) &(selectedMovie.isPlanned()!=true) &(selectedMovie.isPostponed()!=true)&(selectedMovie.isAbandoned()!=true)&(selectedMovie.isWatched()!=true)) {
                     if (selectedMovie.isFavourites()) {
                         selectedMovie.setFavourites(false);
-                        this.btnFavourites.setTextFill(Color.GRAY);
+                        this.btnFavourites.setTextFill(Color.BLUE);
                     } else {
                         selectedMovie.setFavourites(true);
                         this.btnFavourites.setTextFill(Color.RED);
@@ -107,7 +108,7 @@ public class MovieCard extends HBox implements Initializable {
                 if ((this.selectedMovie != null)&(selectedMovie.isPlanned()!=true) &(selectedMovie.isWatched()!=true)&(selectedMovie.isAbandoned()!=true)&(selectedMovie.isFavourites()!=true)) {
                     if (selectedMovie.isPostponed()) {
                         selectedMovie.setPostponed(false);
-                        this.btnPostponed.setTextFill(Color.GRAY);
+                        this.btnPostponed.setTextFill(Color.BLUE);
                     } else {
                         selectedMovie.setPostponed(true);
                         this.btnPostponed.setTextFill(Color.RED);
@@ -120,7 +121,7 @@ public class MovieCard extends HBox implements Initializable {
                 if ((this.selectedMovie != null)&(selectedMovie.isPlanned()!=true) &(selectedMovie.isPostponed()!=true)&(selectedMovie.isWatched()!=true)&(selectedMovie.isFavourites()!=true)) {
                     if (selectedMovie.isAbandoned()) {
                         selectedMovie.setAbandoned(false);
-                        this.btnAbandoned.setTextFill(Color.GRAY);
+                        this.btnAbandoned.setTextFill(Color.BLUE);
                     } else {
                         selectedMovie.setAbandoned(true);
                         this.btnAbandoned.setTextFill(Color.RED);
