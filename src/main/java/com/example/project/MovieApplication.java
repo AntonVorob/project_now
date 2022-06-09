@@ -28,23 +28,17 @@ public class MovieApplication extends Application {
         context = SpringApplication.run(MovieApplication.class);
         movieService = context.getBean(MovieService.class);
 
-        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("example.fxml"));
         FXMLLoader fxmlLoader = new FXMLLoader(MovieApplication.class.getResource("project.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 615);
-        stage.setTitle("Movielib V0.8!");
+        Scene scene = new Scene(fxmlLoader.load(), 700, 630);
+        stage.setTitle("Movielib beta V1.0!");
         stage.setScene(scene);
-//        MovieCardViewer x = new MovieCardViewer();
-//        x.setMovies(List.of(new Movie[]{new Movie("Здравствуйте, я ваша тетя!")}));
-//        ((HBox) scene.getRoot()).getChildren().add(x);
         stage.show();
     }
 
     @Override
     public void stop() throws Exception {
         super.stop();
-        //context.close();
     }
-
 
     public static void main(String[] args) {
         launch();

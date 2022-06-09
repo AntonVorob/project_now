@@ -23,6 +23,12 @@ public class MovieCard extends HBox implements Initializable {
     public Label Genres;
     public Label Description;
     public ImageView Poster;
+    public Button btnWatched;
+    public Button btnPlanned;
+    public Button btnFavourites;
+    public Button btnAbandoned;
+    public Button btnPostponed;
+
     public MovieCard() {
         FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("cardOfFilms.fxml"));
         fxmlLoader.setRoot(this);
@@ -53,16 +59,9 @@ public class MovieCard extends HBox implements Initializable {
 
     }
 
-    // TODO: должны быть кнопки, которые добавляют или удаляют категорию
-
-    @FXML
-    public Button btnWatched;
-    public Button btnPlanned;
-    public Button btnFavourites;
-    public Button btnAbandoned;
-    public Button btnPostponed;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         this.btnWatched.setOnAction(e -> {//просмотренно
             if (selectedMovie.isWatched()) {
                 selectedMovie.setWatched(false);
@@ -118,9 +117,5 @@ public class MovieCard extends HBox implements Initializable {
                 MovieApplication.movieService.saveMovie(selectedMovie);
             });
 
-
-
-
-            // TODO: написать для других кнопок
     }
 }

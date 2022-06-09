@@ -18,16 +18,15 @@ import java.util.ResourceBundle;
 
 public class MovieListViewItem extends HBox implements Initializable {
 
-    // подтянуть названия графических элементов
     @FXML
     public Label nameTitle;
     public ImageView avatarThumbnail;
     public Label Description;
+
     MovieListViewItem() {
         FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("MovieListViewItem.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-
         try {
             fxmlLoader.load();
         } catch (Exception e) {

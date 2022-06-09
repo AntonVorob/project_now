@@ -13,7 +13,7 @@
               <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #0d0505;">
                      <children>
                         <Button fx:id="searchBtn" layoutX="452.0" layoutY="6.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #595151;" text="Искать" textFill="WHITE" />
-                        <TextField fx:id="searchTextField" layoutX="14.0" layoutY="7.0" prefHeight="24.0" prefWidth="418.0" promptText="Поиск фильма или сериала" style="-fx-background-color: #595151;" />
+                        <TextField fx:id="searchTextField" layoutX="14.0" layoutY="7.0" prefHeight="24.0" prefWidth="418.0" promptText="Поиск фильма или сериала"  style="-fx-background-color: #595151;"  />
                         <VBox fx:id="movieContainer" layoutX="14.0" layoutY="40.0" prefHeight="313.0" prefWidth="571.0" style="-fx-background-color: #222222;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="39.0" />
                      </children>
                      <padding>

@@ -86,6 +86,7 @@ public class MovieService {
                 JSONArray movies = (JSONArray) response.get("items");
                 for (int i = 0; i < movies.length(); i++) {
                     Movie movie = new Movie();
+
                     movie.nameRU = movies.getJSONObject(i).optString("nameRu");
                     movie.ratingKinopoisk = movies.getJSONObject(i).optDouble("ratingKinopoisk");
                     movie.filmId = movies.getJSONObject(i).getInt("kinopoiskId");
@@ -106,12 +107,6 @@ public class MovieService {
             }
 
             conn.disconnect();
-
-//            int pagesTotal = response.getInt("pagesCount");
-//            if ((page < pagesTotal) && (page < 5)) {
-//                Movies.addAll(findMovies(s, page + 1));
-//            }
-
         } catch (Exception e) {
             e.printStackTrace();
         }

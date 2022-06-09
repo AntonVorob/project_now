@@ -28,35 +28,35 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btnWatched" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #540808;" text="Просмотренно" textFill="WHITE" GridPane.columnIndex="1">
+            <Button fx:id="btnWatched" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #540808;" text="Просмотренно" textFill="GRAY" GridPane.columnIndex="1">
                   <GridPane.margin>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </GridPane.margin>
                   <padding>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </padding></Button>
-            <Button fx:id="btnFavourites" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #540808;" text="Избранное" textFill="WHITE">
+            <Button fx:id="btnFavourites" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #540808;" text="Избранное" textFill="GRAY">
                   <GridPane.margin>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </GridPane.margin>
                   <padding>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </padding></Button>
-            <Button fx:id="btnPlanned" alignment="CENTER" contentDisplay="BOTTOM" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #540808;" text="В планах" textFill="WHITE" GridPane.rowIndex="1">
+            <Button fx:id="btnPlanned" alignment="CENTER" contentDisplay="BOTTOM" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #540808;" text="В планах" textFill="GRAY" GridPane.rowIndex="1">
                   <GridPane.margin>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </GridPane.margin>
                   <padding>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </padding></Button>
-            <Button fx:id="btnPostponed" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" style="-fx-background-color: #540808;" text="Отложено" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="btnPostponed" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" style="-fx-background-color: #540808;" text="Отложено" textFill="GRAY" GridPane.columnIndex="1" GridPane.rowIndex="2">
                   <GridPane.margin>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </GridPane.margin>
                   <padding>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </padding></Button>
-            <Button fx:id="btnAbandoned" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" style="-fx-background-color: #540808;" text="Брошено" textFill="#fffafa" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="btnAbandoned" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" style="-fx-background-color: #540808;" text="Брошено" textFill="GRAY" GridPane.columnIndex="1" GridPane.rowIndex="1">
                   <GridPane.margin>
                      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                   </GridPane.margin>

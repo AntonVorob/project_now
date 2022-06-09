@@ -54,30 +54,35 @@ public class MainController implements Initializable {
                     movieContainerPlanned.getChildren().clear();
                     movieContainerPlanned.getChildren().add(viewer);
                 }
+
                 if (newValue.equals(1)) {
                     MovieCardViewer viewer = new MovieCardViewer();
                     viewer.setMovies(MovieApplication.movieService.getMoviesWatched());
                     movieContainerWatched.getChildren().clear();
                     movieContainerWatched.getChildren().add(viewer);
                 }
+
                 if (newValue.equals(2)) {
                     MovieCardViewer viewer = new MovieCardViewer();
                     viewer.setMovies(MovieApplication.movieService.getMoviesFavourites());
                     movieContainerFavourites.getChildren().clear();
                     movieContainerFavourites.getChildren().add(viewer);
                 }
+
                 if (newValue.equals(3)) {
                     MovieCardViewer viewer = new MovieCardViewer();
                     viewer.setMovies(MovieApplication.movieService.getMoviesPostponed());
                     movieContainerPostponed.getChildren().clear();
                     movieContainerPostponed.getChildren().add(viewer);
                 }
+
                 if (newValue.equals(4)) {
                     MovieCardViewer viewer = new MovieCardViewer();
                     viewer.setMovies(MovieApplication.movieService.getMoviesAbandoned());
                     movieContainerAbandoned.getChildren().clear();
                     movieContainerAbandoned.getChildren().add(viewer);
                 }
+
             }
         });
 
