@@ -23,9 +23,14 @@ public class Movie {
     String nameRU;
     String nameEN= "";
     String PosterURL = String.valueOf(MovieApplication.class.getResource("puppy.jpg"));
-    String Genres="" ;
+    String Genres="Жанры:" ;
+    String country="";
+    String webUrl;
+    String shortDescription="";
     int years=0;
+    int filmId;
     double ratingKinopoisk=0;
+
 
     public boolean isPlanned() {
         return planned;
@@ -47,8 +52,6 @@ public class Movie {
         return abandoned;
     }
 
-    String shortDescription="";
-
     public void setPlanned(boolean planned) {
         this.planned = planned;
     }
@@ -69,9 +72,7 @@ public class Movie {
         this.abandoned = abandoned;
     }
 
-    String country;
-    String webUrl;
-    int filmId;
+
 
 
 
@@ -126,6 +127,7 @@ public class Movie {
     public Movie() {
 
     }
+
 
     public String getNameRU() {
         return nameRU;

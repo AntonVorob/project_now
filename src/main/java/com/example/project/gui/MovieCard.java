@@ -46,10 +46,11 @@ public class MovieCard extends HBox implements Initializable {
 
         this.selectedMovie = m;
 
+
         this.nameTitle.setText(m.getNameRU());
         this.Genres.setText (m.getGenres());
 
-        this.years.setText("Год: "+m.getYears()+" Рейтинг: "+m.getRatingKinopoisk()+" Страна:"+m.getCountry());
+        this.years.setText("Год: "+m.getYears()+" Рейтинг: "+m.getRatingKinopoisk()+" Страна: "+m.getCountry());
         this.Description.setText ("Оригинальное название: "+m.getNameEN());
           try{
             this.Poster.setImage(new Image(m.getPosterURL()));
@@ -63,6 +64,7 @@ public class MovieCard extends HBox implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
             this.btnWatched.setOnAction(e -> {//просмотренно
+
                 if ((this.selectedMovie != null) &(selectedMovie.isPlanned()!=true) &(selectedMovie.isPostponed()!=true)&(selectedMovie.isAbandoned()!=true)&(selectedMovie.isFavourites()!=true)) {
                     if (selectedMovie.isWatched()) {
                         selectedMovie.setWatched(false);
@@ -71,6 +73,7 @@ public class MovieCard extends HBox implements Initializable {
                         selectedMovie.setWatched(true);
                         this.btnWatched.setTextFill(Color.RED);
                     }
+
                     MovieApplication.movieService.saveMovie(selectedMovie);
                 }
             });

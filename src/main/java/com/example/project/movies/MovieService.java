@@ -70,6 +70,7 @@ public class MovieService {
 
             JSONObject response;
 
+            
             if (responsecode != 200) {
                 throw new RuntimeException("HttpResponseCode: " + responsecode);
             } else {
@@ -82,20 +83,33 @@ public class MovieService {
                 scanner.close();
                 response = new JSONObject(inline);
 
-                // Здесь в бой вступаем МЫ!
+
                 JSONArray movies = (JSONArray) response.get("items");
                 for (int i = 0; i < movies.length(); i++) {
                     Movie movie = new Movie();
+
 
                     movie.nameRU = movies.getJSONObject(i).optString("nameRu");
                     movie.ratingKinopoisk = movies.getJSONObject(i).optDouble("ratingKinopoisk");
                     movie.filmId = movies.getJSONObject(i).getInt("kinopoiskId");
                     movie.years = movies.getJSONObject(i).optInt("year");
                     movie.shortDescription = movies.getJSONObject(i).optString("type");
-                    movie.Genres = movies.getJSONObject(i).optString("genres");
+
+
+                    JSONArray genres = movies.getJSONObject(i).optJSONArray("genres");
+                    for (int j = 0; j<genres.length(); j++){
+                        String genre =genres.getJSONObject(j).optString("genre");
+                        movie.Genres = movie.Genres + genre + " ";
+                    }
+
                     movie.nameEN = movies.getJSONObject(i).optString("nameOriginal");
                     movie.PosterURL = movies.getJSONObject(i).optString("posterUrlPreview");
-                    movie.country = movies.getJSONObject(i).optString("countries");
+
+                    JSONArray countries = movies.getJSONObject(i).optJSONArray("countries");
+                    for (int j = 0; j<countries.length(); j++){
+                        String country =countries.getJSONObject(j).optString("country");
+                        movie.country = movie.country + country + " ";
+                    }
 
                     Movies.add(movie);
 
