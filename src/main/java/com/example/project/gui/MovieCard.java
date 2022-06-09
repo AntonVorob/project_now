@@ -63,7 +63,7 @@ public class MovieCard extends HBox implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
             this.btnWatched.setOnAction(e -> {//просмотренно
-                if (this.selectedMovie != null) {
+                if ((this.selectedMovie != null) &(selectedMovie.isPlanned()!=true) &(selectedMovie.isPostponed()!=true)&(selectedMovie.isAbandoned()!=true)&(selectedMovie.isFavourites()!=true)) {
                     if (selectedMovie.isWatched()) {
                         selectedMovie.setWatched(false);
                         this.btnWatched.setTextFill(Color.GRAY);
@@ -76,7 +76,7 @@ public class MovieCard extends HBox implements Initializable {
             });
 
             this.btnPlanned.setOnAction(e1 -> {//В планах
-                if (this.selectedMovie != null) {
+                if ((this.selectedMovie != null)&(selectedMovie.isWatched()!=true) &(selectedMovie.isPostponed()!=true)&(selectedMovie.isAbandoned()!=true)&(selectedMovie.isFavourites()!=true)) {
                     if (selectedMovie.isPlanned()) {
                         selectedMovie.setPlanned(false);
                         this.btnPlanned.setTextFill(Color.GRAY);
@@ -89,7 +89,7 @@ public class MovieCard extends HBox implements Initializable {
             });
 
             this.btnFavourites.setOnAction(e1 -> {//Избранное
-                if (this.selectedMovie != null) {
+                if ((this.selectedMovie != null) &(selectedMovie.isPlanned()!=true) &(selectedMovie.isPostponed()!=true)&(selectedMovie.isAbandoned()!=true)&(selectedMovie.isWatched()!=true)) {
                     if (selectedMovie.isFavourites()) {
                         selectedMovie.setFavourites(false);
                         this.btnFavourites.setTextFill(Color.GRAY);
@@ -102,7 +102,7 @@ public class MovieCard extends HBox implements Initializable {
             });
 
             this.btnPostponed.setOnAction(e1 -> {//Отложено
-                if (this.selectedMovie != null) {
+                if ((this.selectedMovie != null)&(selectedMovie.isPlanned()!=true) &(selectedMovie.isWatched()!=true)&(selectedMovie.isAbandoned()!=true)&(selectedMovie.isFavourites()!=true)) {
                     if (selectedMovie.isPostponed()) {
                         selectedMovie.setPostponed(false);
                         this.btnPostponed.setTextFill(Color.GRAY);
@@ -115,7 +115,7 @@ public class MovieCard extends HBox implements Initializable {
             });
 
             this.btnAbandoned.setOnAction(e1 -> {//Юрошено
-                if (this.selectedMovie != null) {
+                if ((this.selectedMovie != null)&(selectedMovie.isPlanned()!=true) &(selectedMovie.isPostponed()!=true)&(selectedMovie.isWatched()!=true)&(selectedMovie.isFavourites()!=true)) {
                     if (selectedMovie.isAbandoned()) {
                         selectedMovie.setAbandoned(false);
                         this.btnAbandoned.setTextFill(Color.GRAY);
