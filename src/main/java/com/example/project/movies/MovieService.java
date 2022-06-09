@@ -94,6 +94,8 @@ public class MovieService {
                     movie.filmId = movies.getJSONObject(i).getInt("kinopoiskId");
                     movie.years = movies.getJSONObject(i).optInt("year");
                     movie.shortDescription = movies.getJSONObject(i).optString("type");
+                    movie.nameEN = movies.getJSONObject(i).optString("nameOriginal");
+                    movie.PosterURL = movies.getJSONObject(i).optString("posterUrlPreview");
 
 
                     JSONArray genres = movies.getJSONObject(i).optJSONArray("genres");
@@ -102,8 +104,6 @@ public class MovieService {
                         movie.Genres = movie.Genres + genre + " ";
                     }
 
-                    movie.nameEN = movies.getJSONObject(i).optString("nameOriginal");
-                    movie.PosterURL = movies.getJSONObject(i).optString("posterUrlPreview");
 
                     JSONArray countries = movies.getJSONObject(i).optJSONArray("countries");
                     for (int j = 0; j<countries.length(); j++){
@@ -111,10 +111,8 @@ public class MovieService {
                         movie.country = movie.country + country + " ";
                     }
 
+
                     Movies.add(movie);
-
-                    System.out.println(movies.getJSONObject(i).optString("nameRu"));
-
 
                 }
 

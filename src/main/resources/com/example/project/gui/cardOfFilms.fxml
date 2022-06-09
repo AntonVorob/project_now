@@ -90,7 +90,7 @@
                   <TilePane.margin>
                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                   </TilePane.margin></Label>
-            <Label fx:id="Description" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="340.0" style="-fx-background-color: #595151;" text="Описание:" textFill="WHITE">
+            <Label fx:id="Description" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="340.0" style="-fx-background-color: #595151;" text="Оригинальное название:" textFill="WHITE">
                   <TilePane.margin>
                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                   </TilePane.margin></Label>

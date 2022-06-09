@@ -50,7 +50,7 @@ public class MovieCard extends HBox implements Initializable {
         this.nameTitle.setText(m.getNameRU());
         this.Genres.setText (m.getGenres());
 
-        this.years.setText("Год: "+m.getYears()+" Рейтинг: "+m.getRatingKinopoisk()+" Страна: "+m.getCountry());
+        this.years.setText("Год: "+m.getYears()+";"+" Рейтинг: "+m.getRatingKinopoisk()+";"+" Страна: "+m.getCountry());
         this.Description.setText ("Оригинальное название: "+m.getNameEN());
           try{
             this.Poster.setImage(new Image(m.getPosterURL()));
