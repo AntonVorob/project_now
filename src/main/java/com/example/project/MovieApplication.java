@@ -18,6 +18,7 @@ import java.util.Map;
 public class MovieApplication extends Application {
 
     public static MovieService movieService;
+
     public static Map<String, Image> imageCache = new HashMap<>();
 
     private static ConfigurableApplicationContext context;
