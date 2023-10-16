@@ -8,7 +8,7 @@ import java.util.List;
 public interface MovieRepository extends JpaRepository<Movie, Long>{
 
     @Query
-    Iterable<Movie> findByPlannedIsTrue();
+    List<Movie> findByPlannedIsTrue();
     @Query
     List<Movie> findByWatchedIsTrue();
     @Query
